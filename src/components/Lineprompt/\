@@ -1,0 +1,34 @@
+import React from 'react';
+
+
+export default class Lineprompt extends React.Component 
+{
+	constructor(props){
+		super(props);
+		this.state = {numLines: 2};
+	}
+	handleEnterKeyPress(){
+		this.setState({numLines: 1});
+		console.log("wuss poppin");
+	}
+ 	render() {
+		let numLines = this.state.numLines;
+		let element = 1;	
+		if(element === 1){
+			{this.handleEnterKeyPress};
+		}
+		if(numLines === 2) {
+		 	element = <div>2</div>;
+		}
+		else {
+			element = <div>1</div>;	
+		}
+    		return(
+			<div>
+				{element}
+			</div>
+   		 );
+  }
+
+}
+

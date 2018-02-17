@@ -1,0 +1,43 @@
+import PropTypes from 'prop-types';
+import React from 'react';
+
+
+export default class Line extends React.Component 
+{
+	constructor(props){
+		super(props);
+		this.state = {expression: '', value: 0};
+		this.handleEnterKeyPress = this.handleEnterKeyPress.bind(this);
+		this.handleChange = this.handleChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
+	}
+
+	handleChange(event) {
+		this.setState({value: event.target.value});
+	}
+
+	handleSubmit(event) {
+		console.log('A name was submitted: ' + this.state.value);
+       		event.preventDefault();
+  	}
+	handleEnterKeyPress(e){
+		if(e.which === 13){
+			this.setState({numLines: 1});
+			console.log("wuss poppin");
+		}
+	}
+	render() {
+	    return (
+	      <form onSubmit={this.handleSubmit} onKeyPress = {this.handleEnterKeyPress}>
+		<label>
+		  {this.props.lineNum}~>
+		  <input type="text" value={this.state.value} onChange={this.handleChange} />
+		</label>
+			
+	      </form>
+	    );
+  	}
+}
+Line.propTypes = {
+	lineNum: PropTypes.number
+}
