@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import Button from './hackCWRUexamples/Button.react.js'
+import Button from './hackCWRUexamples/Button.react.js';
+import HeaderBar from './components/HeaderBar.react.js';
+import MyButton from './components/MyButton.react.js';
+
 import test from './hackCWRUexamples/test.react.js';
 import logo from './logo.svg';
 import './App.css';
@@ -13,15 +16,13 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+           get started, edit <code>src/App.js</code> and save to reload.
         </p>
-	<Button
-	 title='Registration Coming Soon'
-	 color='darkBlue' />
-        <Button
-	 title='Sponsor'
-	 color='red' />  
-{/*	<test/> */}
+
+   <HeaderBar title="CALCPAD">
+    <MyButton id="RoastButton"></MyButton>
+  </HeaderBar>
+
 	</div>
     );
   }

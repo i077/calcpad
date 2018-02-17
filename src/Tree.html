@@ -1,0 +1,32 @@
+<title> Tree </title>
+
+<script type="text/javascript">
+
+function Tree(){
+  this.branches = new Array(50);
+  this.size = 0;
+
+  this.getSize = function(){
+    return this.size;
+  }
+
+  function Node(){
+    this.children = new Array(50);
+    this.size = 0;
+
+    this.getSize = function(){
+      return this.size;
+    }
+
+    this.addChild = function(child){
+      this.children[this.size] = child;
+      this.size++;
+    }
+
+    this.getChildren = function(i){
+      return this.children[i];
+    }
+  }
+
+}
+</script>

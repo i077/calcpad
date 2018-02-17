@@ -1,0 +1,14 @@
+.HeaderBar {
+  background-color: #222;
+  height: 50px;
+  width: 100%;
+}
+
+#title {
+  color: #fff;
+  padding-left: 20px;
+}
+
+#children {
+  text-align: right;
+}
