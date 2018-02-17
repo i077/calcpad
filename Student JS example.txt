@@ -1,0 +1,32 @@
+<title>test</title>
+
+<script type="text/javascript">
+
+function Student(name, grade, numCredits){
+	var name;
+	this.name = name;
+
+	var grade;
+	this.grade = grade;
+	this.numCredits = numCredits;
+
+	this.getName = function(){
+		return this.name;
+	}
+
+	this.setName = function(name){
+		this.name = name;
+	}
+}
+
+
+
+
+var tommy = new Student("Thomas Moawad", "freshman", 15);
+document.write(tommy.getName());
+
+tommy.setName("Marc");
+
+document.write(tommy.getName());
+
+</script>
