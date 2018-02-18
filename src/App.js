@@ -7,43 +7,71 @@ import expandExpr from './Expander.react.js';
 import Line from "./components/Line/Line.react.js";
 import './App.css';
 var math = require('mathjs');
+var toRoast = false;
 
 class App extends Component {
+
 	  render() {
+			function toggleRoast(e){
+				toRoast = !toRoast;
+
+if(toRoast){
+	{document.getElementById("RoastButton").style.backgroundColor =  'red'}
+	{document.getElementById("RoastButton").textContent="ROAST ON";}
+}
+else{
+	{document.getElementById("RoastButton").style.backgroundColor =  '#b0c5e8'}
+	{document.getElementById("RoastButton").textContent="roast off";}
+
+}
+			};
+
+
 
 	function handleEnterKeyPress(e){
-		
+
 		if(e.which === 13){
 			return(<Line lineNum={3}/>);
 		}
-		
+
 	};
 	    return (
-		
+
       <div onKeyPress = {handleEnterKeyPress}>
-	<div style={{color: '#b0c5e8'}}> {document.body.style.backgroundColor =  '#b0c5e8'};</div>
-{/*	   <SassButton id="RoastButton"></SassButton>*/}
+	<div style={{color: '#b0c5e8'}}> {document.body.style.backgroundColor =  '#b0c5e8'}
+</div>
 	   <div className="header">
 		<h3>CALCPAD QUIPMATHS</h3>
+		<button id="RoastButton" style={{backgroundColor: '#b0c5e8'}} onClick = {toggleRoast}>roast off</button>
+
 	   </div>
-		<Line 
+		<Line
 			calculateExpressions={
 			(lines)=> Promise.resolve(
 				lines.map( line => {
 				let lineExpressions = new Array(lines.length);
-				let i = 0; 
+				let i = 0;
 				lines.forEach(function(l){
 					lineExpressions[i] = l.expression;
 					i = i+1;
 				});
 					try {
-					
+
+						let expression = line.expression;
+						let numValue = math.eval(expandExpr(line.expression, [], lineExpressions))
+						var valueToReturn = numValue;
+
+						if (toRoast){
+							valueToReturn = insultGenerator(valueToReturn)
+						}
+
+
 				return {
 					expression: line.expression,
-					value: insultGenerator(math.eval(expandExpr(line.expression, [], lineExpressions)))
+					value: valueToReturn
 				}
 				}catch(err){
-					return line	
+					return line
 				}
 				})
 			)
