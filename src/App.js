@@ -18,9 +18,11 @@ class App extends Component {
 		
 	};
 	    return (
-      <div className="App" onKeyPress = {handleEnterKeyPress}>
+		
+      <div onKeyPress = {handleEnterKeyPress}>
+	<div style={{color: '#b0c5e8'}}> {document.body.style.backgroundColor =  '#b0c5e8'};</div>
 	   <div className="header">
-		<h3>CALCPAD</h3>
+		<h3>CALCPAD QUIPMATHS</h3>
 	   {/* <SassButton id="RoastButton"></SassButton>*/}
 	   </div>
 		<Line 

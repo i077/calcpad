@@ -33,7 +33,7 @@ var expandExpr = (expr, stack = [], lines = {}, cache = {}) => {
     if(hasIntersection(stack, refs))
 	throw `Circular Reference Found: ${stack.join(',')}`
 
-    if(!refs.length) return expr;
+    if(!refs.length) return '(' + expr + ')';
 
     let expanded = refs.map(ref => {
 	if(cache[ref])
