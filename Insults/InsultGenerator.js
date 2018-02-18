@@ -27,7 +27,10 @@ module.exports = function insultGenerator (inputNum) {
         /*15*/ ". Feel free to start doing things for yourself at any time.",
         /*16*/ ". Oh, you needed help with that? Ok...",
         /*17*/ ". It's ok. Most little kids can't understand big numbers.",
-        /*18*/ ". You're still going to need to show your work."
+        /*18*/ ". You're still going to need to show your work.",
+        /*19*/ ". What? You couldn't count this high on your own?",
+        /*20*/ ". The amount of friends you don't have.",
+        /*21*/ ". Look at you with your new-fangled decimal numbers.",
     ];
     //this if statemnt is used to determine if it's roasting time (currently set to 5/100 times)
 	/*if (quipDecider > 1){
