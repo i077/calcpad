@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import insultGenerator from './components/InsultGenTest/InsultGenTest.react.js';
 import Line from "./components/Line/Line.react.js";
-import HeaderBar from './components/HeaderBar.react.js';
-import MyButton from './components/MyButton.react.js';
+import HeaderBar from './components/HeaderBar/HeaderBar.react.js';
+import MyButton from './components/SassButton/SassButton.react.js';
 import logo from './logo.svg';
 import './App.css';
 
@@ -25,7 +26,6 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-<<<<<<< HEAD
           To get started, edit <code>src/App.js</code> and save to reload.
         </p> */}
 		<Line 
@@ -36,7 +36,7 @@ class App extends Component {
 					
 				return {
 					expression: line.expression,
-					value: eval(line.expression)
+					value: insultGenerator(eval(line.expression))
 				}
 				}catch(err){
 					return line	
@@ -46,8 +46,8 @@ class App extends Component {
 			}
 		/>
 
-
 	</div>
+
     );
   }
 }
