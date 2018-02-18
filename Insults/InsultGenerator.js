@@ -48,7 +48,7 @@ module.exports = function insultGenerator (inputNum) {
             return inputNum.toString() + quip[8];
         }
         else if (quipChoice >= 2){
-            return inputNum.toString() + quip[21]
+            return inputNum.toString() + quip[21];
         }
     }
 
