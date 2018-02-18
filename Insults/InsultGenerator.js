@@ -12,7 +12,7 @@ module.exports = function insultGenerator (inputNum) {
 		/*0*/ "0. This is also the amount of effort it would have taken you to solve this yourself. Lazy.",
 		/*1*/ "1. Was this honestly too hard for you?",
 		/*2*/ "2. I feel like you\'re using me as a crutch.",
-		/*3*/ "This wasnt that hard. Come on.",
+		/*3*/ ". This wasnt that hard. Come on.",
 		/*4*/ "69. Nice.",
 		/*5*/ "420. Dank.",
 		/*6*/ ". Wow! Big boy numbers!",
