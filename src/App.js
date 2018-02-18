@@ -42,9 +42,11 @@ else{
 </div>
 	   <div className="header">
 		<h3>CALCPAD QUIPMATHS</h3>
-		<button id="RoastButton" style={{backgroundColor: '#b0c5e8'}} onClick = {toggleRoast}>roast off</button>
-
 	   </div>
+		<div align="center">
+			<p>Type some math, then press enter to create a new line. Use "$n" to refer to line n.</p>
+			<button id="RoastButton" style={{backgroundColor: '#b0c5e8'}} onClick = {toggleRoast}>roast off</button>
+		</div>
 		<Line
 			calculateExpressions={
 			(lines)=> Promise.resolve(
