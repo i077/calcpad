@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-
-
 export default class Line extends React.Component 
 {
 	constructor(props){
@@ -58,11 +56,14 @@ export default class Line extends React.Component
 			justifyContent: 'space-between', 
 			width: '75vw',
 			margin: 'auto',
-			marginTop: '20px'
+			marginTop: '2px',
+			backgroundColor: '#fff',
+			borderStyle: 'solid',
+			borderWidth: '5px'
 		     }}
 		>
 			<label key={index}>
-		  		{index}~&gt;
+		  		{index} ~&gt;
 		  		<input
 					ref={(input) => {
 						if(input && this.state.focusedInputIndex === index)

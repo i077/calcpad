@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import insultGenerator from './components/InsultGenTest/InsultGenTest.react.js';
-import Line from "./components/Line/Line.react.js";
 import HeaderBar from './components/HeaderBar/HeaderBar.react.js';
-import MyButton from './components/SassButton/SassButton.react.js';
+import SassButton from './components/SassButton/SassButton.react.js';
 import logo from './logo.svg';
+import expandExpr from './Expander.react.js';
+import Line from "./components/Line/Line.react.js";
 import './App.css';
 
 class App extends Component {
@@ -17,26 +18,28 @@ class App extends Component {
 		
 	};
 	    return (
-      <div className="App" onKeyPress = {handleEnterKeyPress}>
-	   <HeaderBar title="CALCPAD">
-	    <MyButton id="RoastButton"></MyButton>
-	  </HeaderBar>
-{/*        <header classname="app-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p> */}
+		
+      <div onKeyPress = {handleEnterKeyPress}>
+	<div style={{color: '#b0c5e8'}}> {document.body.style.backgroundColor =  '#b0c5e8'};</div>
+	   <div className="header">
+		<h3>CALCPAD QUIPMATHS</h3>
+	   {/* <SassButton id="RoastButton"></SassButton>*/}
+	   </div>
 		<Line 
 			calculateExpressions={
 			(lines)=> Promise.resolve(
 				lines.map( line => {
+				let lineExpressions = new Array(lines.length);
+				let i = 0; 
+				lines.forEach(function(l){
+					lineExpressions[i] = l.expression;
+					i = i+1;
+				});
 					try {
 					
 				return {
 					expression: line.expression,
-					value: insultGenerator(eval(line.expression))
+					value: insultGenerator(eval(expandExpr(line.expression, [], lineExpressions)))
 				}
 				}catch(err){
 					return line	
@@ -45,7 +48,6 @@ class App extends Component {
 			)
 			}
 		/>
-
 	</div>
 
     );
