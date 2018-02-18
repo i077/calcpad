@@ -26,7 +26,7 @@ module.exports = function insultGenerator (inputNum) {
         /*14*/ ". These are getting boring for me.",
         /*15*/ ". Feel free to start doing things for yourself at any time.",
         /*16*/ ". Oh, you needed help with that? Ok...",
-        /*17*/ ". It's ok. Most little kids can't understand big numbers.",
+        /*17*/ ". It's ok. Weaker people usually can\'t get these.",
         /*18*/ ". You're still going to need to show your work.",
         /*19*/ ". What? You couldn't count this high on your own?",
         /*20*/ ". The amount of friends you don't have.",
@@ -44,7 +44,12 @@ module.exports = function insultGenerator (inputNum) {
 
     //options for non-integers
     else if (inputNum.toString().indexOf('.') != -1) {
-		return inputNum.toString() + quip[8];
+        if (quipChoice < 2){
+            return inputNum.toString() + quip[8];
+        }
+        else if (quipChoice >= 2){
+            return inputNum.toString() + quip[21]
+        }
     }
 
      else if (inputNum == 1) {
@@ -87,16 +92,18 @@ module.exports = function insultGenerator (inputNum) {
 
     //options for large numbers
     else if (inputNum > 1000) {
-        if (quipChoice < 2){
+        if (quipChoice == 0){
+            return inputNum.toString() + quip[20];
+        }
+        else if (quipChoice == 1){
             return inputNum.toString() + quip[6];
         }
-        else if (quipChoice >= 2 && quipChoice < 4){
+        else if (quipChoice == 2){
             return inputNum.toString() + quip [11];
         }
-        else if (quipChoice == 4){
+        else if (quipChoice == 3){
             return inputNum.toString() + quip[17];
         }
-
     }
 
     //Options for negative inputs
