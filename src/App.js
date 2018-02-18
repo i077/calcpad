@@ -22,7 +22,7 @@ class App extends Component {
 		
       <div onKeyPress = {handleEnterKeyPress}>
 	<div style={{color: '#b0c5e8'}}> {document.body.style.backgroundColor =  '#b0c5e8'};</div>
-{/*	   <SassButton id="RoastButton"></SassButton>*/}
+	   <SassButton id="RoastButton"></SassButton>
 	   <div className="header">
 		<h3>CALCPAD QUIPMATHS</h3>
 	   </div>
