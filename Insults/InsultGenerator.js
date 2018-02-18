@@ -62,10 +62,10 @@ module.exports = function insultGenerator (inputNum) {
 
     //options for whole numbers below 10
     else if (inputNum > 2 && inputNum <= 10){
-        if (quipChoice <= 4){
+        if (quipChoice < 2){
             return inputNum.toString() + quip[9];
         }
-        else if (quipChoice >4){
+        else if (quipChoice >= 2){
             return inputNum.toString() + quip[3];
         }
     }
