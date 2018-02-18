@@ -13,7 +13,6 @@ extern "C" {
 		// set the locale of the calculator
 		setlocale(LC_ALL, "");
 		// initialize calculator and load things
-		calc = (Calculator*) malloc(sizeof(Calculator) * 4);
 		calc = new Calculator();
 		// calc = std::shared_ptr<Calculator>(new Calculator());
 		bool gdl = calc->loadGlobalDefinitions();
