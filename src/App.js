@@ -59,7 +59,7 @@ else{
 
 						let expression = line.expression;
 						let numValue = math.eval(expandExpr(line.expression, [], lineExpressions))
-						var valueToReturn = numValue;
+						var valueToReturn = numValue.toString();
 
 						if (toRoast){
 							valueToReturn = insultGenerator(valueToReturn)
