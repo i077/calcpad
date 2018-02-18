@@ -6,6 +6,7 @@ import logo from './logo.svg';
 import expandExpr from './Expander.react.js';
 import Line from "./components/Line/Line.react.js";
 import './App.css';
+var math = require('mathjs');
 
 class App extends Component {
 	  render() {
@@ -21,9 +22,9 @@ class App extends Component {
 		
       <div onKeyPress = {handleEnterKeyPress}>
 	<div style={{color: '#b0c5e8'}}> {document.body.style.backgroundColor =  '#b0c5e8'};</div>
+{/*	   <SassButton id="RoastButton"></SassButton>*/}
 	   <div className="header">
 		<h3>CALCPAD QUIPMATHS</h3>
-	   {/* <SassButton id="RoastButton"></SassButton>*/}
 	   </div>
 		<Line 
 			calculateExpressions={
@@ -39,7 +40,7 @@ class App extends Component {
 					
 				return {
 					expression: line.expression,
-					value: insultGenerator(eval(expandExpr(line.expression, [], lineExpressions)))
+					value: insultGenerator(math.eval(expandExpr(line.expression, [], lineExpressions)))
 				}
 				}catch(err){
 					return line	
